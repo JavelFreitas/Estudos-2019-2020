@@ -11,9 +11,9 @@ serverSocket = socket(AF_INET, SOCK_STREAM)
 
 #codigo_inicio
 HOST = ''
-PORT = 8087
+PORT = 8088
 serverSocket.bind((HOST, PORT))
-serverSocket.listen(5)
+serverSocket.listen(10)
 #codigo_fim
 
 
@@ -40,7 +40,7 @@ def responderCliente(message):
         #Envia uma mensagem de resposta “File not Found”
 
         #codigo_inicio
-        connectionSocket.send('HTTP/1.0 200 OK\n'.encode())
+        connectionSocket.send('HTTP/1.0 404\n'.encode())
         connectionSocket.send('Content-type: text/html\n\n'.encode())
         connectionSocket.send('<html lang="en">'.encode())
         connectionSocket.send('<body>'.encode())
@@ -56,32 +56,16 @@ def responderCliente(message):
         serverSocket.close()
         sys.exit()
     except OSError:
-        #Envia uma mensagem de resposta “File not Found”
-
-        #codigo_inicio
-        connectionSocket.send('HTTP/1.0 200 OK\n'.encode())
-        connectionSocket.send('Content-type: text/html\n\n'.encode())
-        connectionSocket.send('<html lang="en">'.encode())
-        connectionSocket.send('<body>'.encode())
-        connectionSocket.send('404 - File Not Found'.encode())
-        connectionSocket.send('</body>'.encode())
-        connectionSocket.send('</html>\r\n'.encode())
-        #codigo_fim
-
-        #Fecha o socket cliente
-        #codigo_inicio
         connectionSocket.close()
-        #codigo_fim
         serverSocket.close()
         sys.exit()
 
 while True:
     #Estabelece a conexão
     print('Ready to serve...')
-    connectionSocket = 1
+
     connectionSocket, addr = serverSocket.accept()
-    #codigo_fim
-    if (connectionSocket != 1):
-        start_new_thread(responderCliente, (connectionSocket.recv(1024), ))
+    print("Aceita a coneccao e comeca uma nova thread")
+    start_new_thread(responderCliente, (connectionSocket.recv(1024), ))
 serverSocket.close()
-sys.exit()#Termina o programa depois de enviar os dados
+sys.exit() #Termina o programa depois de enviar os dados

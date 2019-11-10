@@ -1,10 +1,7 @@
-#!/usr/bin/python
-
 from _thread import *
 import time
 import sys
 
-# Define a function for the thread
 def print_time( threadName, delay):
    count = 0
    while count < 5:
@@ -12,7 +9,6 @@ def print_time( threadName, delay):
       count += 1
       print ("%s: %s" % ( threadName, time.ctime(time.time()) ))
 
-# Create two threads as follows
 try:
     stamp1 = int(input('Digite o tempo para a thread 1'))
     stamp2 = int(input('Digite o tempo para a thread 2'))
@@ -31,12 +27,9 @@ elif stamp2 > stamp3 > stamp1:
 else:
     time.sleep(stamp3*5 + 1)
     pass
+sys.exit
 # podeIr = input('Deseja continuar[s/n]?')
-
-
-
 # if podeIr == 's':
-
 #    pass
 # else:
     
