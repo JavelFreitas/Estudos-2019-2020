@@ -11,7 +11,7 @@ serverSocket = socket(AF_INET, SOCK_STREAM)
 
 #codigo_inicio
 HOST = ''
-PORT = 8086
+PORT = 8089
 serverSocket.bind((HOST, PORT))
 serverSocket.listen(10)
 #codigo_fim
@@ -41,7 +41,7 @@ def responderCliente(connectionSocket):
             for i in range(0, len(outputdata)):
                 connectionSocket.send(outputdata[i].encode())
             connectionSocket.send("\r\n".encode())
-            connectionSocket.close()    
+        connectionSocket.close()    
         pass
     except IOError:
         #Envia uma mensagem de resposta “File not Found”
