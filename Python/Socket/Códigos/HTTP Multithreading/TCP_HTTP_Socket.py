@@ -11,7 +11,7 @@ serverSocket = socket(AF_INET, SOCK_STREAM)
 
 #codigo_inicio
 HOST = ''
-PORT = 8089
+PORT = 8090
 serverSocket.bind((HOST, PORT))
 serverSocket.listen(10)
 #codigo_fim
@@ -20,51 +20,45 @@ serverSocket.listen(10)
 def responderCliente(connectionSocket):
     try:
         message = connectionSocket.recv(1024)
-        # print("=====================")
-        # print(message)
-        # print("=====================")
         message = message.decode()
         filename = message.split()[1]
         
         if filename[1:] != "favicon.ico":
-            f = open(filename[1:])
-            outputdata = f.readlines()
-            #codigo_inicio
-            #codigo_fim
-            
-            #Envia um linha de cabeçalho HTTP para o socket
-            #codigo_inicio
-            connectionSocket.send('HTTP/1.0 200 OK \n'.encode())
-            connectionSocket.send('Content-type:text/html \n\n'.encode())
+            f = open(filename[1:], "rb")
+            outputdata = f.read()
+
+            resposta = 'HTTP/1.0 200 OK \n'.encode()
+            resposta += 'Content-type:text/html \n\n'.encode()
             #codigo_fim
             #Envia o conteúdo do arquivo solicitado ao cliente
-            for i in range(0, len(outputdata)):
-                connectionSocket.send(outputdata[i].encode())
-            connectionSocket.send("\r\n".encode())
+            resposta += outputdata
+            connectionSocket.send(resposta)
         connectionSocket.close()    
         pass
     except IOError:
         #Envia uma mensagem de resposta “File not Found”
 
-        connectionSocket.send('HTTP/1.0 404\n'.encode())
-        connectionSocket.send('Content-type: text/html\n\n'.encode())
-        connectionSocket.send('<html lang="en">'.encode())
-        connectionSocket.send('<body>'.encode())
-        connectionSocket.send('404 - File Not Found'.encode())
-        connectionSocket.send('</body>'.encode())
-        connectionSocket.send('</html>\r\n'.encode())
+        resposta = 'HTTP/1.0 404\n'
+        resposta += 'Content-type: text/html\n\n'
+        resposta += '<html lang="en">'
+        resposta += '<body>'
+        resposta += '404 - File Not Found'
+        resposta += '</body>'
+        resposta += '</html>\r\n'
+        connectionSocket.send(resposta.encode())
 
         connectionSocket.close()
 
     except FileNotFoundError:
         print("File not Found")
-        connectionSocket.send('HTTP/1.0 404\n'.encode())
-        connectionSocket.send('Content-type: text/html\n\n'.encode())
-        connectionSocket.send('<html lang="en">'.encode())
-        connectionSocket.send('<body>'.encode())
-        connectionSocket.send('404 - File Not Found'.encode())
-        connectionSocket.send('</body>'.encode())
-        connectionSocket.send('</html>\r\n'.encode())
+        resposta = 'HTTP/1.0 404\n'
+        resposta += 'Content-type: text/html\n\n'
+        resposta += '<html lang="en">'
+        resposta += '<body>'
+        resposta += '404 - File Not Found'
+        resposta += '</body>'
+        resposta += '</html>\r\n'
+        connectionSocket.send(resposta.encode())
 
         connectionSocket.close()
 
