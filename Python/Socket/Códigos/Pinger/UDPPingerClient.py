@@ -22,4 +22,4 @@ for i in range(10):
         print("-----Tempo de ida e volta: " + str(rtt) + "\n")
     
     except timeout:
-        print("####Tempo Excedido\n")
+        print("Solicitação Expirada\n")
