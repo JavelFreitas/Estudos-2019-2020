@@ -17,4 +17,4 @@
 
 ### Material to study
 
-> [W3Schools](https://www.w3schools.com/python/default.asp "W3Schools's python introduction page") has a great tutorial for python, I Highly recommend it.
+> [W3Schools](https://www.w3schools.com/python/default.asp "W3Schools's python introduction page") has a great tutorial for python, I highly recommend it.
