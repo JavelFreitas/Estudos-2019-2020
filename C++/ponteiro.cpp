@@ -8,14 +8,10 @@ int soma(int a, int b){
 
 int main(){
     cout << "Hello\n";
-    int a = 0, b = 0;
-    cin >> a 
-        >> b;
-    if(a<0 || b<0){
-        cout << "Some number is negative";
-        return 1;
-    }
-    cout << soma(a, b);
+    int a = 1;
+
+    cout << a << endl;
+    cout << &a;
 
     return 0;
 }

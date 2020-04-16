@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+
+    </head>
+
+    <body>
+        <form id="form1">
+            <p>Choose two numbers</p>
+            First number: <input type="text" name="n1" id="n1"><br>
+            Second number: <input type="text" name="n2" id="n2"><br><br>
+
+            <button type="button" onclick="entre2numeros()">opa</button>
+            <p id="teste"></p>
+        </form>
+
+        <script>
+            function entre2numeros() {
+                var n1 = parseInt(document.getElementById("n1").value);
+                var n2 = parseInt(document.getElementById("n2").value);
+                console.log(n1.valueOf);
+                console.log(n1);
+                if (isNaN(n1) || isNaN(n2)) {
+                    alert("Chosse a number for the entry");
+                    return;
+                }
+                var comeco = 0;
+                var fim = 0;
+                var valores = "numeros:";
+                if (n1 < n2) {
+                    comeco = n1 + 1;
+                    fim = n2;
+                } else {
+                    comeco = n2 + 1;
+                    fim = n1;
+                }
+                while (comeco < fim) {
+                    if (comeco % 2 == 0) {
+                        console.log(comeco);
+                        valores += comeco + " ";
+                    }
+                    comeco++;
+                }
+                document.getElementById("teste").innerHTML = valores;
+            }
+        </script>
+    </body>
+
+</html>
