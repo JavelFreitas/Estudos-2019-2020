@@ -19,41 +19,42 @@
 
                 var placeBoxes = document.querySelector('div#app div.boxes');
                 var newBox = document.createElement('div')
-                newBox.setAttribute('class', 'box');
 
+                newBox.setAttribute('class', 'box');
                 newBox.style.width = '100px';
                 newBox.style.height = '100px';
                 newBox.style.backgroundColor = '#f00';
+                newBox.setAttribute('onmouseover', 'changeColor(this)');
 
                 placeBoxes.appendChild(newBox)
             }
+
             var btnElementR = document.querySelector('#app button.botaoR');
             btnElementR.onclick = function () {
+
                 var removeBox = document.querySelector('div#app div.boxes div.box');
                 var placeBoxes = document.querySelector('div#app div.boxes');
+
                 if (!removeBox) {
                     alert('OOPsiie, no boxes here! :)');
                     return;
                 }
+
                 placeBoxes.removeChild(removeBox);
             }
             function getRandomColor() {
+
                 var letters = "0123456789ABCDEF";
                 var color = "#";
+
                 for (var i = 0; i < 6; i++) {
                     color += letters[Math.floor(Math.random() * 16)];
                 }
+
                 return color;
             }
-
-
-            var newColor = getRandomColor(); // #E943F0
-            var mudaCor = document.querySelector('div#app div.boxes div.box');
-            console.log(mudaCor);
-            if(mudaCor){
-                mudaCor.onmouseover = function () {
-                    mudaCor.style.backgroundColor = newColor;
-                }
+            function changeColor(elemento) {
+                elemento.style.backgroundColor = getRandomColor();
             }
 
         </script>
