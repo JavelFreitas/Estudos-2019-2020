@@ -1,0 +1,12 @@
+li.form1Li {
+    background-color: blue;
+    width: 150px;
+    max-width: 250px;
+    list-style-type: none;
+    text-align: center;
+    transition: width 2s;
+}
+
+li.form1Li:hover {
+    width: 300px;
+}
