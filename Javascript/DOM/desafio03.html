@@ -12,20 +12,41 @@
             <input type="text" class="form1Input" id="i1" value="nome1" onfocus="this.value=''">
             <input type="text" class="form1Input" id="i2" value="nome2" onfocus="this.value=''">
             <input type="text" class="form1Input" id="i3" value="nome3" onfocus="this.value=''">
-            <button id="Form1Button" style="background-color: darkred;">Click</button>
+            <button id="Form1Button" type="button" style="background-color: darkred;">Click</button>
         </form>
+        
     </body>
 
     <script>
 
+        function criaLi(elemento) {
+            console.log(elemento.value);
+            var novaLi = document.createElement("li");
+
+            novaLi.setAttribute("class", "form1Li");
+            novaLi.style.backgroundColor = "#ff0000";
+            novaLi.innerHTML = elemento.value;
+           
+            return novaLi;
+
+        }
+
         var botao = document.querySelector("form#form1 button");
 
         botao.onclick = function () {
-            var inputElements = document.querySelectorAll("form#form1 input");
-            alert(inputElements);
-            var placeList = document.querySelector("form#form1");
             
+            var inputElements = document.querySelectorAll("form#form1 input");
+            
+            var placeList = document.querySelector("form#form1");
 
+            var unordered = document.createElement("ul");
+            unordered.setAttribute("class", "lists");
+
+            
+            unordered.appendChild(criaLi(inputElements[0]));
+            
+            console.log("");
+            placeList.appendChild(criaLi(inputElements[0]));
         }
 
 
