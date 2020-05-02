@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form class="Form3Nomes" id="form1" style="display: grid; max-width: 250px;">
+            <input type="text" class="form1Input" id="i1" value="nome1" onfocus="this.value=''">
+            <input type="text" class="form1Input" id="i2" value="nome2" onfocus="this.value=''">
+            <input type="text" class="form1Input" id="i3" value="nome3" onfocus="this.value=''">
+            <button id="Form1Button" style="background-color: darkred;">Click</button>
+        </form>
+    </body>
+
+    <script>
+
+        var botao = document.querySelector("form#form1 button");
+
+        botao.onclick = function () {
+            var inputElements = document.querySelectorAll("form#form1 input");
+            alert(inputElements);
+            var placeList = document.querySelector("form#form1");
+            
+
+        }
+
+
+    </script>
+
+</html>

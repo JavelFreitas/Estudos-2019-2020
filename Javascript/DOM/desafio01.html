@@ -9,8 +9,6 @@
 
     <body>
 
-
-
         <div id="app">
             <button class="botaoC" type="button">+1 Caixa</button>
             <button class="botaoR" type="button">-1 Caixa</button>
@@ -38,7 +36,7 @@
             btnElementR.onclick = function () {
                 var removeBox = document.querySelector('div#app div.boxes div.box');
                 var placeBoxes = document.querySelector('div#app div.boxes');
-                if (!removeBox){
+                if (!removeBox) {
                     alert('OOPsiie, no boxes here! :)');
                     return;
                 }
