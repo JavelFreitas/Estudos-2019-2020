@@ -9,12 +9,15 @@
     </head>
 
     <body>
-        <form class="form3Nomes" id="form1" style="display: grid; max-width: 250px;">
-            <input type="text" class="form1Input" id="i1" value="nome1" onfocus="this.value=''">
-            <input type="text" class="form1Input" id="i2" value="nome2" onfocus="this.value=''">
-            <input type="text" class="form1Input" id="i3" value="nome3" onfocus="this.value=''">
-            <button id="Form1Button" type="button" style="background-color: darkred;">Click</button>
-        </form>
+        <div id="formEResposta">
+            <form class="form3Nomes" id="form1">
+                <input type="text" class="form1Input" id="i1" value="nome1" onfocus="this.value=''">
+                <input type="text" class="form1Input" id="i2" value="nome2" onfocus="this.value=''">
+                <input type="text" class="form1Input" id="i3" value="nome3" onfocus="this.value=''">
+                <button id="form1Button" type="button">Click</button>
+                <hr class="rounded">
+            </form>
+        </div>
         
     </body>
 
@@ -39,15 +42,11 @@
             var inputElements = document.querySelectorAll("form#form1 input");
             
             var placeList = document.querySelector("form#form1");
-
-            var unordered = document.createElement("ul");
-            unordered.setAttribute("class", "lists");
-
-            
-            unordered.appendChild(criaLi(inputElements[0]));
             
             console.log("");
             placeList.appendChild(criaLi(inputElements[0]));
+            placeList.appendChild(criaLi(inputElements[1]));
+            placeList.appendChild(criaLi(inputElements[2]));
         }
 
 
