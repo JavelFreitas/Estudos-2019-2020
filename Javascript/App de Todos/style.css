@@ -1,0 +1,43 @@
+div#app {
+    background-color: aqua;
+    float: left;
+    border-radius: 10px;
+    border-style: solid;
+
+    border-top-width: 2px;
+    border-right-width: 4px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    
+    border-left-color: aliceblue;
+    border-top-color: aliceblue;
+    border-bottom-color: #1fc0ff;
+    border-right-color: #1fc0ff;
+
+    font-size: xx-large;
+}
+
+button#form1Button {
+    background-color: aqua;
+    border-radius: 7px;
+    transition: 0.2s;
+    font-size: xx-large;
+}
+
+button#form1Button:hover {
+    background-color: #1fc0ff;
+    border-radius: 7px;
+}
+
+li {
+    list-style-type: none;
+    background-attachment: fixed;
+    
+    padding: 10px;
+    margin: 5px;
+    border-style: double;
+    
+    font-size: xx-large;
+    float: left;
+    
+}
