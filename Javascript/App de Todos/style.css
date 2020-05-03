@@ -27,6 +27,12 @@ div#app {
     font-size: xx-large;
 }
 
+hr {
+    height: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #EAF2E3;
+}
 
 input#form1Input {
     padding: 12px;
@@ -94,4 +100,3 @@ input {
 input:focus {
     border-radius: 40px;
 }
-

@@ -13,7 +13,6 @@ function renderTodos() {
     listElement.innerHTML = "";
 
     for (todo of todos) {
-        console.log(todo);
 
         var todoElement = document.createElement('li');
         todoElement.setAttribute("onclick", "removeTodo(this)");
@@ -31,7 +30,12 @@ function renderTodos() {
 renderTodos();
 
 function confirmRemove(liConfirm){
-    liConfirm.innerHTML = "Remover?";
+    var tracado = '';
+    var textTodo = liConfirm.innerHTML;
+    while(tracado.length != textTodo.length){
+        tracado += "-";
+    }
+    liConfirm.innerHTML = tracado;
 }
 
 function unconfirmRemove(liConfirm){
@@ -40,7 +44,10 @@ function unconfirmRemove(liConfirm){
 }
 
 function removeTodo(liRemove){
-    listElement.removeChild(liRemove);
+    var textoTodo = liRemove.getAttribute("value");
+    var pos = todos.indexOf(textoTodo);
+    todos.splice(pos, 1);
+    renderTodos();
 }
 
 function addTodo(){
@@ -48,7 +55,6 @@ function addTodo(){
     var todoText = inputElement.value;
     todos.push(todoText);
     inputElement.value = "";
-    console.log(todos);
     
     renderTodos();
 };
