@@ -45,10 +45,16 @@ button#form1Button:hover {
     border-radius: 7px;
 }
 
+button#form1Button:active {
+    background-color: rgba(0, 0, 255);
+    border-radius: 50px;
+}
+
 li {
     list-style-type: none;
     background-attachment: fixed;
     transition: 0.2s;
+    position: sticky;
 
     padding: 10px;
     margin: 5px;
@@ -63,9 +69,13 @@ li {
 li:hover {
     background-color: rgba(0, 0, 255, 0.671);
     color: azure;
+    border-style: dashed;
+    border-radius: 20px;
+    border-color:  crimson;
+
 }
 
 li:active {
-    background-color: rgb(0, 0, 255);
-
+    background-color: crimson;
+    border: none;
 }

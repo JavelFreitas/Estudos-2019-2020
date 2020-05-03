@@ -1,6 +1,6 @@
 var listElement = document.querySelector("#app ul");
-var inputElement = document.querySelector("#app input#Input");
-var buttonElement = document.querySelector("div#app form#form1 button#form1Button");
+var inputElement = document.querySelector("#app input#form1Input");
+var buttonElement = document.querySelector("div#app button#form1Button");
 
 var todos = [
     'Fazer café',
@@ -16,6 +16,7 @@ function renderTodos() {
         console.log(todo);
 
         var todoElement = document.createElement('li');
+        todoElement.setAttribute("onclick", "confirmRemove(this)");
         var todoText = document.createTextNode(todo);
 
         todoElement.appendChild(todoText);
@@ -25,9 +26,16 @@ function renderTodos() {
 
 renderTodos();
 
+function confirmRemove(liConfirm){
+    
+}
+
+function removeTodo(liRemove){
+    listElement.removeChild(liRemove);
+}
 
 function addTodo(){
-    
+    if(!inputElement.value) return;
     var todoText = inputElement.value;
     todos.push(todoText);
     inputElement.value = "";
@@ -36,4 +44,4 @@ function addTodo(){
     renderTodos();
 };
 
-buttonElement.onclick = alert("chegou aq");
+buttonElement.onclick = addTodo;
