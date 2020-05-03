@@ -16,8 +16,12 @@ function renderTodos() {
         console.log(todo);
 
         var todoElement = document.createElement('li');
-        todoElement.setAttribute("onclick", "confirmRemove(this)");
+        todoElement.setAttribute("onclick", "removeTodo(this)");
+        todoElement.setAttribute("onmouseover", "confirmRemove(this)");
+        todoElement.setAttribute("onmouseout", "unconfirmRemove(this)");
+
         var todoText = document.createTextNode(todo);
+        todoElement.setAttribute("value", todo);
 
         todoElement.appendChild(todoText);
         listElement.appendChild(todoElement);
@@ -27,7 +31,12 @@ function renderTodos() {
 renderTodos();
 
 function confirmRemove(liConfirm){
+    liConfirm.innerHTML = "Remover?";
+}
+
+function unconfirmRemove(liConfirm){
     
+    liConfirm.innerHTML = liConfirm.getAttribute("value");
 }
 
 function removeTodo(liRemove){
