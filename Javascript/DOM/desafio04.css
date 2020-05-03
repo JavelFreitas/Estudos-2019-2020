@@ -1,0 +1,46 @@
+div#formEResposta {
+    resize: vertical;
+    align-items: center;
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    font-size: xx-large;
+}
+
+button#form1Button {
+    background-color: rgb(255, 56, 56);
+    border: none;
+    width: 100%;
+    font-size: xx-large;
+}
+
+
+li.form1Li {
+    background-color: rgb(0, 60, 255);
+    height: 70%;
+    width: 70%;
+    max-width: auto;
+    list-style-type: none;
+    text-align: center;
+    transition: 0.34s ease-in-out;
+}
+
+li.form1Li:hover {
+    background-color: crimson;
+    height: 100%;
+    width: 100%;
+}
+
+hr.rounded {
+    border-top: 4px solid #bbb;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: xx-large;
+}

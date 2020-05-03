@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="desafio04.css">
+    </head>
+
+    <body>
+        <div id="formEResposta">
+            <form class="form3Nomes" id="form1">
+                <input type="text" class="form1Input" id="i1" value="nome1" onfocus="this.value=''">
+                <input type="text" class="form1Input" id="i2" value="nome2" onfocus="this.value=''">
+                <input type="text" class="form1Input" id="i3" value="nome3" onfocus="this.value=''">
+                <button id="form1Button" type="button">Click</button>
+                <hr class="rounded">
+            </form>
+        </div>
+        
+    </body>
+
+    <script>
+
+        function criaLi(elemento) {
+            console.log(elemento.value);
+            var novaLi = document.createElement("li");
+
+            novaLi.setAttribute("class", "form1Li");
+            
+            novaLi.innerHTML = elemento.value;
+           
+            return novaLi;
+
+        }
+
+        var botao = document.querySelector("form#form1 button");
+
+        botao.onclick = function () {
+            
+            var inputElements = document.querySelectorAll("form#form1 input");
+            
+            var placeList = document.querySelector("form#form1");
+            
+            console.log("");
+            placeList.appendChild(criaLi(inputElements[0]));
+            placeList.appendChild(criaLi(inputElements[1]));
+            placeList.appendChild(criaLi(inputElements[2]));
+            var i = 0;
+            while (i<3){
+                inputElements[i].value = "";
+                i++;
+            }
+        }
+    </script>
+</html>
