@@ -1,6 +1,6 @@
 var listElement = document.querySelector("#app ul");
 var inputElement = document.querySelector("#app input#Input");
-var buttonElement = document.querySelector("#app button#form1Button");
+var buttonElement = document.querySelector("div#app form#form1 button#form1Button");
 
 var todos = [
     'Fazer café',
@@ -10,6 +10,7 @@ var todos = [
 ];
 
 function renderTodos() {
+    listElement.innerHTML = "";
 
     for (todo of todos) {
         console.log(todo);
@@ -21,4 +22,18 @@ function renderTodos() {
         listElement.appendChild(todoElement);
     }
 }
+
 renderTodos();
+
+
+function addTodo(){
+    
+    var todoText = inputElement.value;
+    todos.push(todoText);
+    inputElement.value = "";
+    console.log(todos);
+    
+    renderTodos();
+};
+
+buttonElement.onclick = alert("chegou aq");
