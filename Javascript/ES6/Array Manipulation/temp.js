@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     const arr = ['Ana', 'Julia', 'Matheus', 'Javel', 'Julio', 'Livia', 'Lyse', 'Viviane'];
-    let inputArray = "";
+    let inputArray = "s";
     if (!inputArray){
         console.log("Empty input");
         return;
