@@ -10,7 +10,8 @@ function start() {
 
 function handleInput(event) {
     if (event.key === 'Enter') {
-        handleUserRequisition(event.srcElement.value)
+        setTimeout(() => {handleUserRequisition(event.srcElement.value)},100);
+        document.querySelector('h1.principal-title').innerText = 'Carregando...';
     }
 }
 
@@ -27,19 +28,17 @@ async function handleUserRequisition(userId) {
                 renderUserRepositories(userRepositories);
             });
 
-            /*
-                Render the name of the user with his link replacing GITHUB USER SEARCH
-                Get repositories with axios
-                Render each of the repositories with links to it
-                Catch errors of wrong user ID
-            */
+            
         })
         .catch(
             (_) => {
                 let title = document.querySelector('h1.principal-title');
+                let repositoryList = document.querySelector('div.repositories');
+
                 title.innerText = "User could not be found";
                 title.setAttribute('class', 'principal-title red-text');
-
+                
+                repositoryList.innerHTML = '';
             });
 
 }
@@ -83,9 +82,8 @@ function renderUserName(userName, userURL) {
 
 function renderUserRepositories(userRepositories) {
     let divRepositories = document.querySelector('div.repositories');
-    console.log(divRepositories);
-    console.log(userRepositories);
-
+    
+    divRepositories.innerHTML = '';
 
     userRepositories.forEach(userRepository => {
         let individualDiv = document.createElement('div');
