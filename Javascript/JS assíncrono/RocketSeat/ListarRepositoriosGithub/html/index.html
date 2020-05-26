@@ -7,22 +7,41 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="../css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
 
     <body>
-        <div class="card-panel blue darken-2 principalTitle">Github User Search</div>
+        <div class="card-panel blue darken-2 center-align principal-title">
+            <a class="title-link"><h1 class="teal-text text-accent-2 principal-title">Github User Search</h1></a>
+        </div>
 
 
 
+        <div class="row">
+            <div class="col s12 m6 teal accent-4 white-text center input-area">
+                <h5>Place here your github login name:</h5>
+                <div class="input-field col s12 m6">
+                    <input id="github_name" type="text" class="input-field validate white-text">
+                    <label for="github_name" class="white-text">Github user</label>
+                </div>
+            </div>
+        </div>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+
+        <div class="row">
+            <div class="repositories row"></div>
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
         <script src="../javascript/script.js"></script>
+        </div>
     </body>
 
 </html>
