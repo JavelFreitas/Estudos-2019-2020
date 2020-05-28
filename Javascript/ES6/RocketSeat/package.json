@@ -13,6 +13,7 @@
     "dev": "babel ./main.js -o ./bundle.js -w",
     "exercicio1-ES6": "babel Modulo1_ES6/Exercicio1/./main.js -o Modulo1_ES6/Exercicio1/./exercicio1.js -w",
     "exercicio2-ES6": "babel Modulo1_ES6/Exercicio2/./main.js -o Modulo1_ES6/Exercicio2/./exercicio2.js -w",
-    "exercicio3-ES6": "babel Modulo1_ES6/Exercicio3/./main.js -o Modulo1_ES6/Exercicio3/./exercicio3.js -w"
+    "exercicio3-ES6": "babel Modulo1_ES6/Exercicio3/./main.js -o Modulo1_ES6/Exercicio3/./exercicio3.js -w",
+    "exercicio4-ES6": "babel Modulo1_ES6/Exercicio4/./main.js -o Modulo1_ES6/Exercicio4/./exercicio4.js -w"
   }
 }
