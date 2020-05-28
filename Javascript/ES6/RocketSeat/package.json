@@ -1,0 +1,18 @@
+{
+  "name": "RocketSeat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.10.0",
+    "@babel/core": "^7.10.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/preset-env": "^7.10.0"
+  },
+  "scripts": {
+    "dev": "babel ./main.js -o ./bundle.js -w",
+    "exercicio1-ES6": "babel Modulo1_ES6/Exercicio1/./main.js -o Modulo1_ES6/Exercicio1/./exercicio1.js -w",
+    "exercicio2-ES6": "babel Modulo1_ES6/Exercicio2/./main.js -o Modulo1_ES6/Exercicio2/./exercicio2.js -w",
+    "exercicio3-ES6": "babel Modulo1_ES6/Exercicio3/./main.js -o Modulo1_ES6/Exercicio3/./exercicio3.js -w"
+  }
+}
