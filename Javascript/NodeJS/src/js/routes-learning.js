@@ -37,15 +37,33 @@ app.route('/testRoute/:id')
     .post([modifyParams, returnResponse])
 // the same route can have multiple responses
 
+
+async function testError(req, res, next){
+    try{
+        throw new Error('algo deu errado');
+    }catch(err){
+        
+        res.status(500).send(err.message);
+    }
+}
+
 function testLog(req, res, next){
     console.log('hello');
     res.end();
 }
 
+
 router.get('/', testLog);
+router.post('/', testError);
+
 
 app.use('/router', router);
 
+
+/*
+    When utilizing async methods, the try/catch will help with errors
+    Inside the catch, write next(err) to send the error to the next;
+*/
 
 app.listen(port, () => {
     console.log(`App listening onport ${port}`);
