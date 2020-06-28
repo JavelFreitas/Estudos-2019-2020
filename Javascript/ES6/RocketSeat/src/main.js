@@ -1,14 +1,26 @@
-import axios from 'axios';
-class Github {
-    static async getRepositories(repo) {
-        try {
-            const response = await axios.get(`https://api.github.com/repos/${repo}`)
-            console.log(response.data);
-        } catch (err) {
-            console.warn(err);
-            console.log('Repositório não existe');
-        }
+
+class App {
+    constructor(){
+        this.repositories = [];
+        this.formEl = document.getElementById('repo-form');
+        this.registerHandlers();
+    }
+
+    registerHandlers(){
+        this.formEl.onsubmit = event => this.addRepository(event);   
+    }
+
+    addRepository(event){
+        event.preventDefault();
+        this.repositories.push({
+            name: 'rocketseat',
+            avatar_url: 'https://avatars0.githubusercontent.com/u/28929274?v=4',
+            html_url: 'http://github.com/rocketseat'
+        })
+
+        console.log(this.repositories);
+        
     }
 }
-Github.getRepositories('rocketseat/rocketseat.com.br');
-Github.getRepositories('rocketseat/dslkvmskv');
+
+const meuApp = new App();
