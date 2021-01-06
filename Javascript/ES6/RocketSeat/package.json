@@ -27,6 +27,6 @@
     "exercicio7-ES6": "babel Modulo1_ES6/Exercicio7/./main.js -o Modulo1_ES6/Exercicio7/./exercicio7.js -w"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   }
 }
